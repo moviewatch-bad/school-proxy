@@ -24,6 +24,7 @@ h1 {
 }
 
 .game-icon {
+    margin-left: 20px;
     width: 150px;
     height: 150px;
     background-color: #007bff;

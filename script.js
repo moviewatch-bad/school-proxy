@@ -4,5 +4,5 @@ function openSlopeGame() {
 }
 // This is the function to open Snow-Rider-3D game V
 function openSnowrider3dGame() {
-    window.location.href = "games/snow-rider-3d/index.html";
+    window.location.href = "games/Snow-Rider-3D/index.html";
 }

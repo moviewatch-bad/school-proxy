@@ -6,3 +6,7 @@ function openSlopeGame() {
 function openSnowrider3dGame() {
     window.location.href = "games/Snow-Rider-3D/index.html";
 }
+// This is the function to open the Cookie-Clicker game V
+function openCookieclickerGame() {
+    window.location.href = "games/cookieclicker/index.html";
+}

@@ -18,7 +18,7 @@ body {
     justify-content: center;
     align-items: center;
     gap: 20px;
-    text-align: center;
+    /* text-align: center; Was once necessary but now isn't. Getting rid of it allows the containers to be horizontal rather than vertical*/
 }
 
 h1 {

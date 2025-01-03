@@ -206,14 +206,31 @@
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Games</h1>
-        <div class="game-icon" id="slope-icon" onclick="openSlopeGame()">
-            <span>Slope</span>
-        </div>
-        <div class="game-icon" id="snowrider3d-icon" onclick="openSnowrider3dGame()">
-            <span>Snow-Rider-3D</span>
-        </div>
+    <header>
+        <h1>Playaway</h1>
+        <p>Brought to you by PXI-Fusion X CrackinPMG</p>
+    </header>
+
+    <!-- Glowing Menu Bar -->
+    <div class="menu-bar">
+        <a href="#">Home</a>
+    </div>
+
+    <div id="particles"></div>
+
+    <div class="game-container" id="game-container"></div>
+
+    <!-- Game Info Box -->
+    <div id="game-info-box" class="game-info-box">
+        <div class="game-name"></div>
+        <div class="game-description"></div>
+        <button class="open-button" onclick="openGameLink()">Play Game</button>
+    </div>
+
+    <!-- Custom Alert Box -->
+    <div id="custom-alert" class="custom-alert">
+        <p>This is a custom alert box!</p>
+        <button onclick="closeAlert()">OK</button>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
@@ -236,7 +253,7 @@
         const games = [
             { name: "Slope", description: "A fast-paced downhill racing game where you avoid obstacles and aim to get the highest score!", image: "https://sloperun.org/data/image/posts/slope-image.jpg", link: "games/slope/slope/index.html" },
             { name: "Snow Rider 3D", description: "A 3D snowboarding game where you race down snowy hills and perform tricks.", image: "https://web-saystore-backend.sgdn.io/snwrdrw/game_preview_en__qzu7wcp7YDhr", link: "games/Snow-Rider-3D/index.html" },
-            { name: "Cookie Clicker", description: "An exciting clicker style game where you immerse yourself in the process of baking cookies and dream of transforming from a humble baker to a true cookie emperor", image: "https://upload.wikimedia.org/wikipedia/en/0/06/Cookie_Clicker_logo.png", link: "games/cookieclicker/index.html" },
+            { name: "Cookie Clicker", description: "An exciting clicker style game where you immerse yourself in the process of baking cookies and dream of transforming from a humble baker to a true cookie emperor", image: "https://upload.wikimedia.org/wikipedia/en/0/06/Cookie_Clicker_logo.png", link: "games/Snow-Rider-3D/index.html" },
             // // Add more games here
         ];
 

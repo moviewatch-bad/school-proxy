@@ -206,31 +206,14 @@
     </style>
 </head>
 <body>
-    <header>
-        <h1>Playaway</h1>
-        <p>Brought to you by PXI-Fusion X CrackinPMG</p>
-    </header>
-
-    <!-- Glowing Menu Bar -->
-    <div class="menu-bar">
-        <a href="#">Home</a>
-    </div>
-
-    <div id="particles"></div>
-
-    <div class="game-container" id="game-container"></div>
-
-    <!-- Game Info Box -->
-    <div id="game-info-box" class="game-info-box">
-        <div class="game-name"></div>
-        <div class="game-description"></div>
-        <button class="open-button" onclick="openGameLink()">Play Game</button>
-    </div>
-
-    <!-- Custom Alert Box -->
-    <div id="custom-alert" class="custom-alert">
-        <p>This is a custom alert box!</p>
-        <button onclick="closeAlert()">OK</button>
+    <div class="container">
+        <h1>Games</h1>
+        <div class="game-icon" id="slope-icon" onclick="openSlopeGame()">
+            <span>Slope</span>
+        </div>
+        <div class="game-icon" id="snowrider3d-icon" onclick="openSnowrider3dGame()">
+            <span>Snow-Rider-3D</span>
+        </div>
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>

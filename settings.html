@@ -225,7 +225,7 @@
         // This is the function that updates the website's title
         function updateWebsiteTitle() {
             const title = document.getElementById('websiteTitleInput').value;
-            const newTab = window.open(title, '_blank');
+            const newTab = window.open('about:blank', '_blank');
             if (newTab) {
                 newTab.document.write(`
                     <style>
@@ -235,6 +235,8 @@
                     <iframe src="https://playaway.pages.dev"></iframe>
                 `);
                 newTab.document.close();
+                //update with new name
+                newTab.document.title = title;
             } else {
                 alert('Please allow pop-ups for this site.');
             }

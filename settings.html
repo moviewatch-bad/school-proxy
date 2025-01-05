@@ -258,18 +258,39 @@
             }
         }
         
-        // update Website Icon (using the URL)
+        // Function to update Website Icon (Favicon) using the URL
         function updateWebsiteIcon() {
             const iconUrl = document.getElementById('websiteIconInput').value;
+        
             if (iconUrl) {
+                let finalUrl;
+        
+                // Check if the URL starts with "http://" or "https://"
+                if (iconUrl.startsWith('http://') || iconUrl.startsWith('https://')) {
+                    finalUrl = iconUrl; // it's a full URL
+                } else {
+                    // It's a relative path, so append it to the current domain
+                    finalUrl = window.location.origin + iconUrl;
+                }
+        
+                // Remove any existing favicon link
+                const existingFavicon = document.querySelector('link[rel="icon"]');
+                if (existingFavicon) {
+                    existingFavicon.remove();
+                }
+        
+                // Create a new link element for the favicon
                 let link = document.createElement('link');
                 link.rel = 'icon';
-                link.href = `https://www.google.com/s2/favicons?domain=${iconUrl}`;
+                link.href = finalUrl;
+        
+                // Append the link element to the head of the document (this updates the favicon)
                 document.head.appendChild(link);
             } else {
                 alert('Please enter a valid URL for the website icon');
             }
         }
+
   
     </script>
 </body>

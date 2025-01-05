@@ -1,64 +1,173 @@
+<!DOCTYPE html>
+<html lang="en-us">
 <head>
-<!-- Adsense -->
-<script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-8024356722027062"
-     crossorigin="anonymous"></script>
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-VKK1BVCT2G"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', 'G-VKK1BVCT2G');
-</script>
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Slope Game - Thrilling Ball Rolling Challenge</title>
+    <meta name="description" content="Play the Slope game and challenge your reflexes in this fast-paced 3D ball rolling experience. Navigate slopes, avoid obstacles, and achieve high scores!">
+    <meta name="theme-color" content="#007ACC">
+    <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="PXI-Fusion X CrackinPMG">
+    <meta name="keywords" content="Slope game, ball rolling, reflex challenge, fast-paced, 3D game, slopes, obstacles, high scores">
     <script src="TemplateData/UnityProgress.js"></script>
     <script src="TemplateData/unityloader41.js"></script>
     <script>
-        var gameInstance = UnityLoader.instantiate("gameContainer", "Build/slope.json", { onProgress: UnityProgress, Module: { onRuntimeInitialized: function() { UnityProgress(gameInstance, "complete") } } });
+        var tips = [
+            "Tip: Stay in the center for better control!",
+            "Tip: Anticipate turns to avoid falling!",
+            "Tip: Speed increases as you progress!"
+        ];
+
+        var gameInstance = UnityLoader.instantiate("gameContainer", "Build/slope.json", {
+            onProgress: function(instance, progress) {
+                var tipIndex = Math.floor(Math.random() * tips.length);
+                UnityProgress(instance, `Loading... ${tips[tipIndex]}`);
+            },
+            Module: {
+                onRuntimeInitialized: function() {
+                    UnityProgress(gameInstance, "complete");
+                }
+            }
+        });
+
+        document.addEventListener('keydown', function(event) {
+            if (event.metaKey && event.key === 'q') {
+                const menuBar = document.querySelector('.menu-bar');
+                menuBar.style.display = menuBar.style.display === 'none' ? 'flex' : 'none';
+            }
+        });
+
+        function rotateTips() {
+            const tipElement = document.querySelector('.menu-tips');
+            let currentTipIndex = 0;
+            setInterval(() => {
+                currentTipIndex = (currentTipIndex + 1) % tips.length;
+                tipElement.textContent = tips[currentTipIndex];
+            }, 5000);
+        }
+
+        document.addEventListener('DOMContentLoaded', rotateTips);
     </script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2541434264715219"
-     crossorigin="anonymous"></script>
-    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2541434264715219"
-     crossorigin="anonymous"></script>
     <style>
-        .alert {
-          padding: 20px;
-          background-color: #0096FF;
-          color: white;
+        body {
+            overflow: hidden;
+            padding: 0;
+            margin: 0;
+            background: #1e1e1e;
+            color: #fff;
+            font-family: Arial, sans-serif;
         }
 
-        .closebtn {
-          margin-left: 15px;
-          color: white;
-          p {text-align: center;}  
-          font-weight: bold;
-          float: right;
-          font-size: 22px;
-          line-height: 20px;
-          cursor: pointer;
-          transition: 0.3s;
+        #gameContainer {
+            width: 960px;
+            height: 600px;
+            margin: auto;
         }
 
-        .closebtn:hover {
-          color: black;
+        .menu-bar {
+            display: none;
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            border-top: 2px solid #007ACC;
+            padding: 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .menu-bar .game-name {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+
+        .menu-bar .menu-tips {
+            font-size: 1rem;
+            font-style: italic;
+            color: #9cdcfe;
+            flex: 1;
+            text-align: center;
+        }
+
+        .menu-bar .menu-buttons {
+            display: flex;
+            gap: 10px;
+        }
+
+        .menu-bar .menu-buttons button {
+            background: #007ACC;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .menu-bar .menu-buttons button:hover {
+            background: #005fa3;
+        }
+
+        .particles {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            pointer-events: none;
+            background: url('particles.png') repeat;
+            animation: moveParticles 20s linear infinite;
+        }
+
+        @keyframes moveParticles {
+            from {
+                transform: translate(0, 0);
+            }
+            to {
+                transform: translate(-50%, -50%);
+            }
+        }
+
+        .menu-bar .menu-buttons .back-to-main {
+            background: #ff5f5f;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background 0.3s ease;
+        }
+
+        .menu-bar .menu-buttons .back-to-main:hover {
+            background: #d9534f;
         }
     </style>
 </head>
-
-<!--- 
-Want to run or host yourself? Check out the source? 
-https://github.com/cgolden15/Slope-Game/ 
-
-Drop a star on the repo if you enjoy.
---->
-
-<body style="margin: 0; overflow: hidden;">
+<body>
     <div class="webgl-content">
-        <div id="gameContainer" style="width: 100%; height: 100%; margin: 0;"></div>
+        <div id="gameContainer"></div>
     </div>
-    <!-- <a title="GDPR-compliant Web Analytics" href="https://clicky.com/101393847"><img alt="Clicky" src="//static.getclicky.com/media/links/badge.gif" border="0" /></a> -->
-    <script async src="//static.getclicky.com/101393847.js"></script>
-    <noscript><p><img alt="Clicky" width="1" height="1" src="//in.getclicky.com/101393847ns.gif" /></p></noscript>
+
+    <div class="menu-bar">
+        <div class="game-name">Slope</div>
+        <div class="menu-tips">Tip: Stay in the center for better control!</div>
+        <div class="menu-buttons">
+            <button class="back-to-main" onclick="window.location.href=window.location.href.replace(/games\/Slope\/index.html$/, 'index.html');">Main Menu</button>
+            <button onclick="document.querySelector('.menu-bar').style.display = 'none';">Hide</button>
+            <button onclick="document.querySelector('.menu-bar').remove();">Remove</button>
+            <button onclick="gameInstance.SetFullscreen(1);">Fullscreen</button>
+        </div>
+    </div>
+
+    <div class="particles"></div>
 </body>
-<!-- Slope game by y8 games, not me.-->
+</html>

@@ -252,7 +252,7 @@
         function updateWebsiteTitle() {
             const title = document.getElementById('websiteTitleInput').value;
             if (title) {
-                document.getElementById('websiteTitleDisplay').innerText = title;
+                document.title = title;
             } else {
                 alert('Please enter a valid website title');
             }
@@ -264,7 +264,8 @@
             if (iconUrl) {
                 const logo = document.getElementById('websiteLogo');
                 logo.src = `https://www.google.com/s2/favicons?domain=${iconUrl}`;
-                logo.style.display = 'block'; // Show the image
+                //logo.style.display = 'block'; // Show the image
+                document.head.appendChild(logo)
             } else {
                 alert('Please enter a valid URL for the website icon');
             }

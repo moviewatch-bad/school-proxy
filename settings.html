@@ -225,17 +225,18 @@
         // This is the function that updates the website's title
         function updateWebsiteTitle() {
             const title = document.getElementById('websiteTitleInput').value;
-            if (title) {
-                // Get the iframe from the new tab
-                const iframeWindow = window.open('about:blank', '_blank');
-                iframeWindow.document.title = title;  // Update the iframe's title
-    
-                // Additional step to send title update into the iframe if needed
-                if (iframeWindow.iframe) {
-                    iframeWindow.iframe.contentWindow.document.title = title;
-                }
+            const newTab = window.open(title, '_blank');
+            if (newTab) {
+                newTab.document.write(`
+                    <style>
+                        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+                        iframe { width: 100%; height: 100%; border: none; }
+                    </style>
+                    <iframe src="https://playaway.pages.dev"></iframe>
+                `);
+                newTab.document.close();
             } else {
-                alert('Please enter a valid website title');
+                alert('Please allow pop-ups for this site.');
             }
         }
         

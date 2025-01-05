@@ -226,7 +226,14 @@
         function updateWebsiteTitle() {
             const title = document.getElementById('websiteTitleInput').value;
             if (title) {
-                document.title = title;
+                // Get the iframe from the new tab
+                const iframeWindow = window.open('about:blank', '_blank');
+                iframeWindow.document.title = title;  // Update the iframe's title
+    
+                // Additional step to send title update into the iframe if needed
+                if (iframeWindow.iframe) {
+                    iframeWindow.iframe.contentWindow.document.title = title;
+                }
             } else {
                 alert('Please enter a valid website title');
             }

@@ -258,14 +258,14 @@
             }
         }
         
-        // Function to update Website Icon (using the URL)
+        // update Website Icon (using the URL)
         function updateWebsiteIcon() {
             const iconUrl = document.getElementById('websiteIconInput').value;
             if (iconUrl) {
-                const logo = document.getElementById('websiteLogo');
-                logo.src = `https://www.google.com/s2/favicons?domain=${iconUrl}`;
-                //logo.style.display = 'block'; // Show the image
-                document.head.appendChild(logo)
+                let link = document.createElement('link');
+                link.rel = 'icon';
+                link.href = `https://www.google.com/s2/favicons?domain=${iconUrl}`;
+                document.head.appendChild(link);
             } else {
                 alert('Please enter a valid URL for the website icon');
             }

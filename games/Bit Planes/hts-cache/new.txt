@@ -1,0 +1,6 @@
+date	size'/'remotesize	flags(request:Update,Range state:File response:Modified,Chunked,gZipped)	statuscode	status ('servermsg')	MIME	Etag|Date	URL	localfile	(from URL)
+18:04:52	6350/6350	---MCZ	200	added ('OK')	text/html	etag:W/%2266fbcdc2-18ce%22	https://medv.io/bit-planes/	C:/My%20Web%20Sites/Bit%20Planes/medv.io/bit-planes/index.html	(from )
+18:04:52	56/56	---MCZ	404	error ('Not%20Found')	text/plain	etag:W/%2267725a53-29%22	https://medv.io/robots.txt		(from )
+18:04:53	20435/20435	---MCZ	200	added ('OK')	text/css	etag:W/%2266f71108-4fd3%22	https://medv.io/bit-planes/styles.css?61ad99c5b4afb2a38d49	C:/My%20Web%20Sites/Bit%20Planes/medv.io/bit-planes/styles99e0.css	(from https://medv.io/bit-planes/)
+18:04:55	227261/227261	---M-Z	200	added ('OK')	application/javascript	etag:%2267655eba-14f73%22	https://mc.yandex.ru/metrika/tag.js	C:/My%20Web%20Sites/Bit%20Planes/mc.yandex.ru/metrika/tag.js	(from https://medv.io/bit-planes/)
+18:04:56	200433/200433	---MCZ	200	added ('OK')	application/javascript	etag:W/%2266fbcdc2-30ef1%22	https://medv.io/bit-planes/index.js?61ad99c5b4afb2a38d49	C:/My%20Web%20Sites/Bit%20Planes/medv.io/bit-planes/index99e0.js	(from https://medv.io/bit-planes/)

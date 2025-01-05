@@ -10,3 +10,4 @@ function openSnowrider3dGame() {
 function openCookieclickerGame() {
     window.location.href = "games/cookieclicker/index.html";
 }
+ // all of this is useless now

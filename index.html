@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -78,131 +79,6 @@
             background: black;
             z-index: -1;
         }
-
-        /* Game Box Container */
-        .game-container {
-            display: flex;
-            gap: 20px;
-            flex-wrap: wrap;
-            justify-content: center;
-            margin-top: 100px;
-        }
-
-        .game-box {
-            position: relative;
-            width: 300px;
-            height: 200px;
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 15px;
-            overflow: hidden;
-            cursor: pointer;
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-
-        .game-box:hover {
-            transform: scale(1.05);
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
-        }
-
-        .game-box img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            border-radius: 15px;
-        }
-
-        .game-title {
-            position: absolute;
-            bottom: 10px;
-            left: 10px;
-            font-size: 1.2rem;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 5px 10px;
-            border-radius: 5px;
-        }
-
-        .game-info-box {
-            position: fixed;
-            bottom: -300px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80%;
-            max-width: 600px;
-            background: rgba(0, 0, 0, 0.8);
-            color: white;
-            border-radius: 10px;
-            padding: 20px;
-            text-align: center;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-            opacity: 0;
-            transition: bottom 0.5s ease, opacity 0.5s ease;
-        }
-
-        .game-info-box.show {
-            bottom: 20px;
-            opacity: 1;
-        }
-
-        .game-info-box .game-name {
-            font-size: 2rem;
-            margin-bottom: 15px;
-        }
-
-        .game-info-box .game-description {
-            font-size: 1rem;
-            margin-bottom: 20px;
-        }
-
-        .game-info-box .open-button {
-            padding: 10px 20px;
-            background-color: #ff4500;
-            border: none;
-            color: white;
-            font-size: 1rem;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .game-info-box .open-button:hover {
-            background-color: #ff6347;
-        }
-
-        /* Custom Alert Box */
-        .custom-alert {
-            display: none;
-            position: fixed;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            background-color: rgba(0, 0, 0, 0.9);
-            color: white;
-            padding: 20px 40px;
-            border-radius: 10px;
-            text-align: center;
-            font-size: 1.2rem;
-            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.5);
-            z-index: 100;
-        }
-
-        .custom-alert.show {
-            display: block;
-        }
-
-        .custom-alert button {
-            background-color: #ff4500;
-            border: none;
-            color: white;
-            font-size: 1rem;
-            padding: 10px 20px;
-            border-radius: 5px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-
-        .custom-alert button:hover {
-            background-color: #ff6347;
-        }
     </style>
 </head>
 <body>
@@ -213,25 +89,12 @@
 
     <!-- Glowing Menu Bar -->
     <div class="menu-bar">
-        <a href="#">Home</a>
+        <a href="index.html">Home</a>
+        <a href="games.html">Games</a>
+        <a href="settings.html">Settings</a>
     </div>
 
     <div id="particles"></div>
-
-    <div class="game-container" id="game-container"></div>
-
-    <!-- Game Info Box -->
-    <div id="game-info-box" class="game-info-box">
-        <div class="game-name"></div>
-        <div class="game-description"></div>
-        <button class="open-button" onclick="openGameLink()">Play Game</button>
-    </div>
-
-    <!-- Custom Alert Box -->
-    <div id="custom-alert" class="custom-alert">
-        <p>This is a custom alert box!</p>
-        <button onclick="closeAlert()">OK</button>
-    </div>
 
     <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
     <script>
@@ -248,63 +111,6 @@
             },
             retina_detect: true
         });
-
-        // Dynamic Game Data
-        const games = [
-            { name: "Slope", description: "A fast-paced downhill racing game where you avoid obstacles and aim to get the highest score!", image: "https://sloperun.org/data/image/posts/slope-image.jpg", link: "games/slope/slope/index.html" },
-            { name: "Snow Rider 3D", description: "A 3D snowboarding game where you race down snowy hills and perform tricks.", image: "https://web-saystore-backend.sgdn.io/snwrdrw/game_preview_en__qzu7wcp7YDhr", link: "games/Snow-Rider-3D/index.html" },
-            { name: "Cookie Clicker", description: "An exciting clicker style game where you immerse yourself in the process of baking cookies and dream of transforming from a humble baker to a true cookie emperor", image: "https://upload.wikimedia.org/wikipedia/en/0/06/Cookie_Clicker_logo.png", link: "games/cookieclicker/index.html" },
-            { name: "Stickman Hook", description: "A casual action game developed by PLAYTOUCH in which players control a stick figure character as they swing from hooks and navigate through levels filled with obstacles.", image: "https://cdn6.aptoide.com/imgs/5/a/8/5a8679de365f96043b525b2c7d286196_fgraphic.png", link: "games/Stickman-Hook/index.html" },
-            { name: "Tunnel Rush", description: "Blah blah blah - have fun DragonX", image: "https://tunnelrushgame.io/data/image/tunnel-rush.png", link: "games/tunnel-rush/index.html" },
-            { name: "Poly Track", description: "More work for you haha", image: "https://images.crazygames.com/polytrack_16x9/20240814074159/polytrack_16x9-cover?auto=format,compress&q=75&cs=strip", link: "games/polytrack/index.html" },
-            // // Add more games here
-        ];
-
-        // Add games to the page dynamically
-        const gameContainer = document.getElementById('game-container');
-        games.forEach(game => {
-            const gameBox = document.createElement('div');
-            gameBox.classList.add('game-box');
-            gameBox.innerHTML = `
-                <img src="${game.image}" alt="${game.name}">
-                <div class="game-title">${game.name}</div>
-            `;
-            gameBox.addEventListener('click', () => openGame(game.name, game.description, game.link));
-            gameContainer.appendChild(gameBox);
-        });
-
-        let gameName = '';
-        let gameDescription = '';
-        let gameLink = '';
-
-        function openGame(name, description, link) {
-            gameName = name;
-            gameDescription = description;
-            gameLink = link;
-
-            document.querySelector('.game-info-box .game-name').textContent = name;
-            document.querySelector('.game-info-box .game-description').textContent = description;
-            const gameInfoBox = document.getElementById('game-info-box');
-            gameInfoBox.classList.add('show');
-        }
-
-        function openGameLink() {
-            showCustomAlert("You have successfully opened the game!");
-            setTimeout(() => {
-                window.location.href = gameLink;
-            }, 2000);  // Delay before redirection to allow the alert to show
-        }
-
-        function showCustomAlert(message) {
-            const alertBox = document.getElementById('custom-alert');
-            alertBox.querySelector('p').textContent = message;
-            alertBox.classList.add('show');
-        }
-
-        function closeAlert() {
-            const alertBox = document.getElementById('custom-alert');
-            alertBox.classList.remove('show');
-        }
     </script>
 </body>
 </html>

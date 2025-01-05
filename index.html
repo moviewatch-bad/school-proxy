@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Playaway</title>
+    <title>Welcome to Playaway</title>
     <style>
         * {
             margin: 0;
@@ -21,7 +20,7 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            overflow: hidden;
+            overflow-y: auto;
         }
 
         header {
@@ -69,6 +68,51 @@
             box-shadow: 0 0 10px #ff4500, 0 0 20px #ff4500;
         }
 
+        .title-container {
+            text-align: center;
+            margin-top: 100px;
+        }
+
+        .title-container h1 {
+            font-size: 3.5rem;
+            text-shadow: 0 0 10px #fff, 0 0 20px #00ff99, 0 0 30px #00ff99;
+            animation: glow 2s infinite alternate;
+        }
+
+        .subtitle {
+            font-size: 1.5rem;
+            margin-top: 20px;
+            height: 2rem;
+            overflow: hidden;
+        }
+
+        /* Typing effect */
+        .typed-text {
+            display: inline-block;
+            border-right: 2px solid #fff;
+            animation: blink 0.7s infinite;
+            white-space: nowrap;
+        }
+
+        /* Animations */
+        @keyframes glow {
+            from {
+                text-shadow: 0 0 10px #fff, 0 0 20px #00ff99, 0 0 30px #00ff99;
+            }
+            to {
+                text-shadow: 0 0 20px #fff, 0 0 40px #00ff99, 0 0 60px #00ff99;
+            }
+        }
+
+        @keyframes blink {
+            0%, 100% {
+                border-color: transparent;
+            }
+            50% {
+                border-color: #fff;
+            }
+        }
+
         /* Particle background */
         #particles {
             position: fixed;
@@ -94,6 +138,13 @@
         <a href="settings.html">Settings</a>
     </div>
 
+    <div class="title-container">
+        <h1>Welcome To Playaway</h1>
+        <div class="subtitle">
+            <span class="typed-text"></span>
+        </div>
+    </div>
+
     <div id="particles"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
@@ -111,6 +162,41 @@
             },
             retina_detect: true
         });
+
+        // Typing animation  You can add text here
+        const textArray = [
+            "A Place With Games",
+            "A Place For Fun",
+            "No Limits, Just Fun",
+            "Brought To You By PXI-Fusion X CrackinPMG"
+        ];
+        const typedTextElement = document.querySelector(".typed-text");
+        let textIndex = 0;
+        let charIndex = 0;
+
+        function typeText() {
+            if (charIndex < textArray[textIndex].length) {
+                typedTextElement.textContent += textArray[textIndex].charAt(charIndex);
+                charIndex++;
+                setTimeout(typeText, 100); // Speed of typing
+            } else {
+                setTimeout(eraseText, 2000); // Delay before erasing
+            }
+        }
+
+        function eraseText() {
+            if (charIndex > 0) {
+                typedTextElement.textContent = textArray[textIndex].substring(0, charIndex - 1);
+                charIndex--;
+                setTimeout(eraseText, 50); // Speed of erasing
+            } else {
+                textIndex = (textIndex + 1) % textArray.length;
+                setTimeout(typeText, 500); // Delay before typing new text
+            }
+        }
+
+        // Start typing animation
+        typeText();
     </script>
 </body>
 </html>

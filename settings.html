@@ -125,6 +125,48 @@
             background: black;
             z-index: -1;
         }
+        
+        .input-container {
+            margin-top: 20px;
+            text-align: center;
+            color: white;
+        }
+        
+        .input-container input {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #fff;
+            margin: 10px;
+            background: rgba(0, 0, 0, 0.3);
+            color: #fff;
+        }
+        
+        .input-container button {
+            padding: 10px 20px;
+            border: none;
+            background: #ff4500;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background 0.3s;
+        }
+        
+        .input-container button:hover {
+            background: #ff6347;
+        }
+        
+        .logo-container {
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .logo-container img {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+        }
+
+        
     </style>
 </head>
 <body>
@@ -148,6 +190,27 @@
             <button onclick="openBlankCloak()">Open Blanker</button>
         </div>
     </div>
+
+    <!-- Input for Website Title -->
+    <div class="input-container">
+        <label for="websiteTitleInput">Input the Website Title:</label>
+        <input type="text" id="websiteTitleInput" placeholder="Enter website title" />
+        <button onclick="updateWebsiteTitle()">Confirm Title</button>
+    </div>
+    
+    <!-- Input for Website Icon URL -->
+    <div class="input-container">
+        <label for="websiteIconInput">Input the Website Icon URL (e.g., google.com):</label>
+        <input type="url" id="websiteIconInput" placeholder="Enter URL for icon" />
+        <button onclick="updateWebsiteIcon()">Confirm Icon</button>
+    </div>
+    
+    <!-- Display Website Title and Icon -->
+    <div class="logo-container" id="logoContainer">
+        <img id="websiteLogo" src="" alt="Website Logo" style="display: none;" />
+        <p id="websiteTitleDisplay"></p>
+    </div>
+
 
     <div id="particles"></div>
 
@@ -181,6 +244,29 @@
                 newTab.document.close();
             } else {
                 alert('Please allow pop-ups for this site.');
+            }
+        }
+
+
+        // Function to update Website Title
+        function updateWebsiteTitle() {
+            const title = document.getElementById('websiteTitleInput').value;
+            if (title) {
+                document.getElementById('websiteTitleDisplay').innerText = title;
+            } else {
+                alert('Please enter a valid website title');
+            }
+        }
+        
+        // Function to update Website Icon (using the URL)
+        function updateWebsiteIcon() {
+            const iconUrl = document.getElementById('websiteIconInput').value;
+            if (iconUrl) {
+                const logo = document.getElementById('websiteLogo');
+                logo.src = `https://www.google.com/s2/favicons?domain=${iconUrl}`;
+                logo.style.display = 'block'; // Show the image
+            } else {
+                alert('Please enter a valid URL for the website icon');
             }
         }
   

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -69,6 +68,53 @@
             box-shadow: 0 0 10px #ff4500, 0 0 20px #ff4500;
         }
 
+        /* Cloak Box Container */
+        .cloak-container {
+            display: flex;
+            gap: 20px;
+            margin-top: 50px;
+            padding: 20px;
+            border-radius: 20px;
+            background: rgba(255, 255, 255, 0.1);
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+        }
+
+        .cloak-box {
+            padding: 20px;
+            border-radius: 10px;
+            text-align: center;
+            width: 200px;
+            height: 150px;
+            background: rgba(0, 0, 0, 0.6);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .cloak-box:hover {
+            transform: scale(1.05);
+            box-shadow: 0 0 20px #ff4500, 0 0 30px #ff4500;
+        }
+
+        .cloak-box h3 {
+            font-size: 1.5rem;
+            margin-bottom: 10px;
+        }
+
+        .cloak-box button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.1);
+            color: #fff;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+
+        .cloak-box button:hover {
+            background: rgba(255, 255, 255, 0.3);
+            box-shadow: 0 0 10px #ff4500;
+        }
+
         /* Particle background */
         #particles {
             position: fixed;
@@ -94,6 +140,15 @@
         <a href="settings.html">Settings</a>
     </div>
 
+    <!-- Cloak Boxes -->
+    <div class="cloak-container">
+        <div class="cloak-box">
+            <h3>About:Blank Cloak</h3>
+            <p>Disguises the page in an about:blank link</p>
+            <button onclick="openBlankCloak()">Open Blanker</button>
+        </div>
+    </div>
+
     <div id="particles"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
@@ -111,6 +166,23 @@
             },
             retina_detect: true
         });
+
+        // Open a new tab with about:blank and iframe the Playaway page
+        function openBlankCloak() {
+            const newTab = window.open('about:blank', '_blank');
+            if (newTab) {
+                newTab.document.write(`
+                    <style>
+                        body, html { margin: 0; padding: 0; height: 100%; overflow: hidden; }
+                        iframe { width: 100%; height: 100%; border: none; }
+                    </style>
+                    <iframe src="https://playaway.pages.dev"></iframe>
+                `);
+                newTab.document.close();
+            } else {
+                alert('Please allow pop-ups for this site.');
+            }
+        }
     </script>
 </body>
 </html>

@@ -149,19 +149,6 @@
         </div>
     </div>
 
-    <!-- website name +  the logo inputs -->
-    <div class="input-container">
-        <input type="text" id="websiteName" placeholder="Enter Website Name" />
-        <input type="text" id="websiteURL" placeholder="Enter Website URL (e.g., google.com)" />
-        <button onclick="updateWebsiteInfo()">Update Website Info</button>
-    </div>
-
-    <!-- displaying the website logo -->
-    <div class="logo-container" id="logoContainer">
-        <img id="websiteLogo" src="" alt="Website Logo" style="display: none;" />
-        <p id="websiteTitle"></p>
-    </div>
-
     <div id="particles"></div>
 
     <script src="https://cdn.jsdelivr.net/npm/particles.js"></script>
@@ -196,27 +183,7 @@
                 alert('Please allow pop-ups for this site.');
             }
         }
-
-        // this will update the website's info - function for input fields
-        function updateWebsiteInfo() {
-            const websiteName = document.getElementById('websiteName').value;
-            const websiteURL = document.getElementById('websiteURL').value;
-
-            if (!websiteName || !websiteURL) {
-                alert('Please fill out both fields.');
-                return;
-            }
-
-            // Set website title
-            document.getElementById('websiteTitle').innerText = websiteName;
-
-            // Fetch the website's favicon or logo
-            const faviconURL = `https://www.google.com/s2/favicons?domain=${websiteURL}`;
-            const logo = document.getElementById('websiteLogo');
-            logo.src = faviconURL;
-            logo.style.display = 'block';
-        }
-        
+  
     </script>
 </body>
 </html>

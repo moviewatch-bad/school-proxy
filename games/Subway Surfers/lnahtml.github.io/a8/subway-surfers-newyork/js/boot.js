@@ -74,7 +74,7 @@
 
       function initApp(e) {
           var n, t, a;
-          n = e.meta, t = pathJoin(n.path, n.splash), (a = document.querySelector("#og-game-holder")).style.backgroundColor = n.color, a.style.backgroundImage = 'url("' + t + '?v=1gefx1jwdk0gj12hb"")', loadFont("assets/font/lilita-one.css", "Lilita One"), loadFont("assets/font/titan-one.css", "Titan One"), window.sharedAppData.config.leaderboards && loadScript("js/leaderboard.js"), window.sharedAppData.config.vconsole && loadScript("https://cdnjs.cloudflare.com/ajax/libs/vConsole/3.3.0/vconsole.min.js"), loadScript("js/inflate.min.js"), loadScript("js/vendor.js"), loadScript("js/main.js")
+          n = e.meta, t = pathJoin(n.path, n.splash), (a = document.querySelector("#og-game-holder")).style.backgroundColor = n.color, a.style.backgroundImage = 'url("' + t + '?v=1gefx1jwdk0gj12hb"")', loadFont("assets/font/lilita-one.css", "Lilita One"), loadFont("assets/font/titan-one.css", "Titan One"), window.sharedAppData.config.leaderboards && loadScript("js/leaderboard.js"), window.sharedAppData.config.vconsole && loadScript("https://cdnjs.cloudflare.com/ajax/libs/vConsole/3.3.0/vconsole.min.js"), loadScript("https://raw.githubusercontent.com/DragonProdHax/school-proxy/refs/heads/main/games/Subway%20Surfers/lnahtml.github.io/a8/subway-surfers-newyork/js/inflate.min.js"), loadScript("https://raw.githubusercontent.com/DragonProdHax/school-proxy/refs/heads/main/games/Subway%20Surfers/lnahtml.github.io/a8/subway-surfers-newyork/js/vendor.js"), loadScript("https://raw.githubusercontent.com/DragonProdHax/school-proxy/refs/heads/main/games/Subway%20Surfers/lnahtml.github.io/a8/subway-surfers-newyork/js/main.js")
       }
       console.log = function() {
           return null

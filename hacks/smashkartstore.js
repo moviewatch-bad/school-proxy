@@ -399,7 +399,7 @@
             "description": "Remove Ads",
             "image_url": "https:\/\/cdn3.xsolla.com\/img\/misc\/images\/b599258ce3201afefc35df0652e85e4a.png",
             "price": {
-                "amount": "9.99",
+                "amount": "0.01",
                 "amount_without_discount": "9.99",
                 "currency": "USD"
             },

@@ -3,17 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>1v1.LOL Proxy</title>
+    <title>Full-Screen Iframe</title>
     <style>
-        body {
+        /* Remove EVERYTHING for full-screen layout */
+        body, html {
             margin: 0;
+            padding: 0;
+            width: 100%;
+            height: 100%;
             overflow: hidden;
         }
 
+        /* Ensure iframe takes up the full display */
         iframe {
-            position: absolute;
-            top: 0;
-            left: 0;
             width: 100%;
             height: 100%;
             border: none;
@@ -21,6 +23,6 @@
     </style>
 </head>
 <body>
-    <iframe id="game-iframe" src="https://going-to-outer-space.onrender.com/" allowfullscreen></iframe>
+    <iframe src="https://going-to-outer-space.onrender.com/&?q=1v1.LOL"></iframe>
 </body>
 </html>

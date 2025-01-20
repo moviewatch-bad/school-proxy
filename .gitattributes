@@ -1,0 +1,2 @@
+games/subway-surfers-beijing/* filter=lfs diff=lfs merge=lfs -text
+\!games/subway-surfers-beijing/.gitlab-ci.yml

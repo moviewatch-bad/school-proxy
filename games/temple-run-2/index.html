@@ -1,39 +1,42 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no" />
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temple Run 2 - Playaway</title>
+    <style>
+        /* Ensure the body takes up full screen */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
 
-        <title>Temple Run 2 - topVAZ  Unblocked - ClassRoom6x</title>
-        <meta name="website" content="classroom6x.gitlab.io" />
-        <link rel="stylesheet" type="text/css" href="global.css" />
-        <link rel="manifest" href="appmanifest.json">
-        <link rel="icon" href="img/og-icon.png">
-        <!-- <link rel='stylesheet' type="text/css" href='./bundle.css'> -->
-        <style>
-            html,
-            body {
-                overflow: hidden;
-                width: 100%;
-                height: 100%;
-                min-height: 100%;
-                max-height: 100%;
-                position: absolute;
-                top: 0;
-                left: 0;
-                margin: 0;
-                padding: 0;
-                -webkit-text-size-adjust: none;
-                touch-action: pan-x pan-y;
-            }
-            /* @media only screen and (orientation:landscape) {
-			body {
-				transform: rotate(90deg);
-			}
-		} */
-        </style>
-        <script defer src="bundle.js"></script>
-        <script type="application/javascript" src="/js/main.js"></script>
-    </head>
-    <body style="overflow:hidden;"></body>
+        /* Style for iframe to cover full screen */
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Fullscreen iframe -->
+    <iframe src="https://bejewelled-klepon-5e573d.netlify.app/" id="myIframe"></iframe>
+
+    <script>
+        // Ensure iframe resizes on window resize event
+        window.addEventListener('resize', function() {
+            const iframe = document.getElementById('myIframe');
+            iframe.style.width = window.innerWidth + 'px';
+            iframe.style.height = window.innerHeight + 'px';
+        });
+
+        // Set initial fullscreen size
+        const iframe = document.getElementById('myIframe');
+        iframe.style.width = window.innerWidth + 'px';
+        iframe.style.height = window.innerHeight + 'px';
+    </script>
+</body>
 </html>

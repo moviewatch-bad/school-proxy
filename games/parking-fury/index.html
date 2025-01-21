@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Parking Fury - Playaway</title>
+    <style>
+        /* Ensure the body takes up full screen */
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+        }
+
+        /* Style for iframe to cover full screen */
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Fullscreen iframe -->
+    <iframe src="https://frabjous-naiad-03eb45.netlify.app/" id="myIframe"></iframe>
+
+    <script>
+        // Ensure iframe resizes on window resize event
+        window.addEventListener('resize', function() {
+            const iframe = document.getElementById('myIframe');
+            iframe.style.width = window.innerWidth + 'px';
+            iframe.style.height = window.innerHeight + 'px';
+        });
+
+        // Set initial fullscreen size
+        const iframe = document.getElementById('myIframe');
+        iframe.style.width = window.innerWidth + 'px';
+        iframe.style.height = window.innerHeight + 'px';
+    </script>
+</body>
+</html>

@@ -1,0 +1,32 @@
+[
+    {
+        "Game": {
+          "name": "Example Game",
+          "description": "This is an example game",
+          "logo": "link logo",
+          "game_link": "game link to iframe here",
+          "id": "example"
+        }
+      },
+      {
+        "Game": {
+          "name": "Slope",
+          "description": "Slope Unblocked",
+          "game_play": "https://i.makeagif.com/media/7-06-2021/TOL7vW.gif",
+          "game_link": "/games/slope/slope/index.html",
+          "id": "slope"
+          
+        }
+      },
+      {
+        "Game": {
+          "name": "Roblox",
+          "description": "Roblox unblocked",
+          "game_play": "https://i.makeagif.com/media/7-06-2021/TOL7vW.gif",
+          "game_link": "/homework/science.html",
+          "id": "roblox"
+          
+        }
+      }
+
+]

@@ -27,6 +27,16 @@
           "id": "roblox"
           
         }
+      },
+      {
+        "Game": {
+          "name": "Tiny Fishing",
+          "description": "Tiny Fishing unblocked",
+          "game_play": "https://i.makeagif.com/media/7-06-2021/TOL7vW.gif",
+          "game_link": "/games/tiny-fishing/index.html",
+          "id": "tiny-fishing"
+          
+        }
       }
 
 ]

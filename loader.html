@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Playaway | Game Loader</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/particles.js/2.0.0/particles.min.js">
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -16,6 +17,22 @@
             align-items: center;
             overflow: hidden;
             flex-direction: column;
+        }
+        .menu-bar {
+            position: absolute;
+            top: 0;
+            width: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            justify-content: space-around;
+            padding: 10px;
+            z-index: 10;
+        }
+        .menu-bar a {
+            color: white;
+            text-decoration: none;
+            font-size: 20px;
+            text-shadow: 0 0 10px #fff;
         }
         .container {
             display: flex;
@@ -59,6 +76,12 @@
     </style>
 </head>
 <body>
+    <!-- Glowing Menu Bar -->
+    <div class="menu-bar">
+        <a href="index.html">Home</a>
+        <a href="games.html">Games</a>
+        <a href="settings.html">Settings</a>
+    </div>
     <div class="container">
         <h1 id="game-name">Loading...</h1>
         <iframe id="game-frame"></iframe>

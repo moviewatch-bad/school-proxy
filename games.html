@@ -262,43 +262,40 @@
         });
 
         // Dynamic Game Data
-        const games = [
+        const games = 
+[
             { name: "1v1 lol", description: "It will work trust!!! It takes 1 minute to load", image: "https://cdn-bgp.bluestacks.com/BGP/us/gametiles_lol.onevone.jpg", link: "homework/math.html" },
             { name: "Roblox", description: "It will work trust!!! It takes 1 minute to load", image: "https://play-lh.googleusercontent.com/WNWZaxi9RdJKe2GQM3vqXIAkk69mnIl4Cc8EyZcir2SKlVOxeUv9tZGfNTmNaLC717Ht", link: "loader.html?game_id=roblox" },
-            { name: "Slope", description: "A fast-paced downhill racing game where you avoid obstacles and aim to get the highest score!", image: "https://sloperun.org/data/image/posts/slope-image.jpg", link: "games/slope/slope/index.html" },
-            { name: "Snow Rider 3D", description: "A 3D snowboarding game where you race down snowy hills and perform tricks.", image: "https://web-saystore-backend.sgdn.io/snwrdrw/game_preview_en__qzu7wcp7YDhr", link: "games/Snow-Rider-3D/index.html" },
-            { name: "Gobble", description: "Gobble Eat And Eat", image: "https://www.fancade.com/wiki/uploads/gobblemartinmagni.png", link: "games/gobble/index.html" },
-            { name: "Subway Surfers", description: "Jump Jump JUMP!!! Dead...", image: "https://subwaysurfers.com/media/f2ldlfpi/subwaysurfers_01.png", link: "games/subway-surfers-beijing/index.html" },
-            { name: "Cookie Clicker", description: "An exciting clicker style game where you immerse yourself in the process of baking cookies and dream of transforming from a humble baker to a true cookie emperor", image: "https://upload.wikimedia.org/wikipedia/en/0/06/Cookie_Clicker_logo.png", link: "games/cookieclicker/index.html" },
-            { name: "Drive Mad", description: "Play Drive Mad UNBLOCKED", image: "https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=314,height=314,fit=cover,f=auto/0fdbf399b9c52aad46ce6a657a563b1b.png", link: "games/drive-mad/index.html" },
-            { name: "Madalin Stunt Cars 3", description: "It will work trust!!! It takes 1 minute to load", image: "https://www.drifted.com/wp-content/uploads/2021/10/madalin-stunt-cars-3-car-list-750.jpg", link: "games/madalin-stunt-cars-3" },
-            { name: "Stickman Hook", description: "A casual action game developed by PLAYTOUCH in which players control a stick figure character as they swing from hooks and navigate through levels filled with obstacles.", image: "https://cdn6.aptoide.com/imgs/5/a/8/5a8679de365f96043b525b2c7d286196_fgraphic.png", link: "games/Stickman-Hook/index.html" },
-            { name: "Tunnel Rush", description: "Rush through a tunnel I think", image: "https://tunnelrushgame.io/data/image/tunnel-rush.png", link: "games/tunnel-rush/index.html" },
-            { name: "Poly Track", description: "The best racing game - not biased", image: "https://images.crazygames.com/polytrack_16x9/20240814074159/polytrack_16x9-cover?auto=format,compress&q=75&cs=strip", link: "games/polytrack/index.html" },
-            { name: "2048", description: "A game with numbers - a wise man", image: "https://images.crazygames.com/games/2048/cover_16x9-1707828856995.png?auto=format,compress&q=75&cs=strip", link: "games/2048/index.html" },
-            { name: "Crazy Racing", description: "the racing is crazy fr fr", image: "https://camo.githubusercontent.com/5dd1d47d41632a15fde8ecc969ea3fffc65d5fffaae5c153cb78ac92feb58f44/687474703a2f2f79756568616f77616e672e6769746875622e696f2f696d616765732f64656d6f2f6372617a795f726163696e67312e706e67", link: "games/crazy-racing/index.html" },
-            { name: "Rooftop Snipers", description: "Better not miss", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRv6OkrxTvdZRIvM01YG1jXtglMA0viAU4bpg&s", link: "games/rooftop-snipers/index.html" },
-            { name: "Tiny Fishing", description: "There is always a bigger fish - maybe", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmgt71SEpRQqQzFKLmyCVQ3BadEu6_xtVlog&s", link: "loader.html?game_id=tiny-fishing" },
-            { name: "Drive Mad", description: "Yep, you are driving mad", image: "https://cdn.content.play123.com/game-images/drive-crazy_big.webp", link: "games/drivemad/index.html" },
-            
-            { name: "Suika Game (Clone)", description: "you better like fruits", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcUA-CpheX91Sttpp6Qqc7D18pj-ovnBTXGw&s", link: "games/suika-game-clone/index.html" },
-            { name: "Death Run 3d", description: "better not die", image: "https://i.kinja-img.com/image/upload/c_fill,h_264,pg_1,q_80,w_470/1d262b64ba8ba5f7f7ac3f03cb783832.jpg", link: "games/death-run-3d/index.html" },
-            { name: "Crossy Road", description: "HONK HONK!!!", image: "https://images.squarespace-cdn.com/content/v1/5e3bb512203ccf3516032e33/a0e8f281-94c0-47c2-a96c-b729daccf938/CRClassic_Banner_2000x1500.png", link: "games/crossy-road/index.html" },
-            { name: "Tetris", description: "tet ris", image: "https://www.hollywoodreporter.com/wp-content/uploads/2014/09/tatris_a_l.jpg?w=1440&h=810&crop=1", link: "games/tetris/index.html" },
-            { name: "12-minibattles", description: "Play 12-minibattles UNBLOCKED", image: "https://imgs.crazygames.com/games/12-minibattles/cover_16x9-1707829553932.png?auto=format%2Ccompress&q=45&cs=strip&ch=DPR&w=1200&h=630&fit=crop", link: "games/12-multi-games/index.html" },
-            { name: "Block Blast", description: "blast blocks fr fr", image: "https://tcf.admeen.org/game/18500/18097/400x246/block-blast.jpg", link: "games/block-blast/index.html" },
-            { name: "Bit Planes", description: "bitty planes?", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-D-5Gh4Ds20Sn1AGzS5cu2sdaQr-DH0SwdA&s", link: "games/Bit Planes/index.html" },
-            { name: "Infinite-soccer", description: "KICKKICKKICK", image: "https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=314,height=314,fit=cover,f=auto/760becc3912111347a66b8b98c110d2d.png", link: "games/infinite-soccer/index.html" },
-            { name: "Duck Life", description: "FLYING DUCKY", image: "  https://cdn-0001.qstv.on.epicgames.com/dvDRVKBvBpYlORJWTN/image/landscape_comp.jpeg", link: "games/duck-life/index.html" },
-            { name: "Doodle Jump", description: "Play Doodle Jump UNBLOCKED", image: "https://images.crazygames.com/games/doodle-jump/cover-1669135753297.png?auto=format,compress&q=75&cs=strip", link: "games/doodle-jump/index.html" },
-            { name: "Temple Run 2", description: "IDK What this game is", image: "https://i.ytimg.com/vi/9aK2zoFBbKY/maxresdefault.jpg", link: "games/temple-run-2/index.html" },
-            { name: "Drift Boss", description: "Play Drift Boss UNBLOCKED", image: "https://images.crazygames.com/games/drift-boss/cover_16x9-1732741931008.png?auto=format,compress&q=75&cs=strip", link: "games/drift-boss/index.html" },
-            
-            { name: "Subway Surfers (broken?)", description: "This better work", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRETx9pdTEVl7kGEKpMN56VARACRdwgxnZlGA&s", link: "games/Subway Surfers/index.html" },
-            { name: "Basketball Legends", description: "Play Basketball Unblocked", image: "https://img.gamepix.com/games/basketball-legends-2020/cover/basketball-legends-2020.png?w=400&ar=16:10", link: "games/basketball/basketball-legends/index.html" },
-            { name: "Slope 3", description: "Wait 3rd version???", image: "https://slope3.com/imgs/slope-3.jpg", link: "games/slope-3/index.html" },
+            { name: "Slope", description: "A fast-paced downhill racing game where you avoid obstacles and aim to get the highest score!", image: "https://sloperun.org/data/image/posts/slope-image.jpg", link: "loader.html?game_id=slope" },
+            { name: "Snow Rider 3D", description: "A 3D snowboarding game where you race down snowy hills and perform tricks.", image: "https://web-saystore-backend.sgdn.io/snwrdrw/game_preview_en__qzu7wcp7YDhr", link: "loader.html?game_id=snow-rider-3d" },
+            { name: "Gobble", description: "Gobble Eat And Eat", image: "https://www.fancade.com/wiki/uploads/gobblemartinmagni.png", link: "loader.html?game_id=gobble" },
+            { name: "Subway Surfers", description: "Jump Jump JUMP!!! Dead...", image: "https://subwaysurfers.com/media/f2ldlfpi/subwaysurfers_01.png", link: "loader.html?game_id=subway-surfers" },
+            { name: "Cookie Clicker", description: "An exciting clicker style game where you immerse yourself in the process of baking cookies and dream of transforming from a humble baker to a true cookie emperor", image: "https://upload.wikimedia.org/wikipedia/en/0/06/Cookie_Clicker_logo.png", link: "loader.html?game_id=cookie-clicker" },
+    { name: "Madalin Stunt Cars 3", description: "It will work trust!!! It takes 1 minute to load", image: "https://www.drifted.com/wp-content/uploads/2021/10/madalin-stunt-cars-3-car-list-750.jpg", link: "loader.html?game_id=madalin-stunt-cars-3" },
+    { name: "Stickman Hook", description: "A casual action game developed by PLAYTOUCH in which players control a stick figure character as they swing from hooks and navigate through levels filled with obstacles.", image: "https://cdn6.aptoide.com/imgs/5/a/8/5a8679de365f96043b525b2c7d286196_fgraphic.png", link: "loader.html?game_id=stickman-hook" },
+    { name: "Tunnel Rush", description: "Rush through a tunnel I think", image: "https://tunnelrushgame.io/data/image/tunnel-rush.png", link: "loader.html?game_id=tunnel-rush" },
+    { name: "Poly Track", description: "The best racing game - not biased", image: "https://images.crazygames.com/polytrack_16x9/20240814074159/polytrack_16x9-cover?auto=format,compress&q=75&cs=strip", link: "loader.html?game_id=poly-track" },
+    { name: "2048", description: "A game with numbers - a wise man", image: "https://images.crazygames.com/games/2048/cover_16x9-1707828856995.png?auto=format,compress&q=75&cs=strip", link: "loader.html?game_id=2048" },
+{name: "Crazy Racing", description: "the racing is crazy fr fr", image: "https://camo.githubusercontent.com/5dd1d47d41632a15fde8ecc969ea3fffc65d5fffaae5c153cb78ac92feb58f44/687474703a2f2f79756568616f77616e672e6769746875622e696f2f696d616765732f64656d6f2f6372617a795f726163696e67312e706e67", link: "loader.html?game_id=crazy-racing" },
+{ name: "Rooftop Snipers", description: "Better not miss", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRv6OkrxTvdZRIvM01YG1jXtglMA0viAU4bpg&s", link: "loader.html?game_id=rooftop-snipers" },
+{ name: "Tiny Fishing", description: "There is always a bigger fish - maybe", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmgt71SEpRQqQzFKLmyCVQ3BadEu6_xtVlog&s", link: "loader.html?game_id=tiny-fishing" },
+{ name: "Drive Mad", description: "Yep, you are driving mad", image: "https://cdn.content.play123.com/game-images/drive-crazy_big.webp", link: "loader.html?game_id=drive-mad" },
+{ name: "Suika Game (Clone)", description: "you better like fruits", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcUA-CpheX91Sttpp6Qqc7D18pj-ovnBTXGw&s", link: "loader.html?game_id=suika-game-clone" },
+{ name: "Death Run 3d", description: "better not die", image: "https://i.kinja-img.com/image/upload/c_fill,h_264,pg_1,q_80,w_470/1d262b64ba8ba5f7f7ac3f03cb783832.jpg", link: "loader.html?game_id=death-run-3d" },
+{ name: "Crossy Road", description: "HONK HONK!!!", image: "https://images.squarespace-cdn.com/content/v1/5e3bb512203ccf3516032e33/a0e8f281-94c0-47c2-a96c-b729daccf938/CRClassic_Banner_2000x1500.png", link: "loader.html?game_id=crossy-road" },
+{ name: "Tetris", description: "tet ris", image: "https://www.hollywoodreporter.com/wp-content/uploads/2014/09/tatris_a_l.jpg?w=1440&h=810&crop=1", link: "loader.html?game_id=tetris" },
+{ name: "12-minibattles", description: "Play 12-minibattles UNBLOCKED", image: "https://imgs.crazygames.com/games/12-minibattles/cover_16x9-1707829553932.png?auto=format%2Ccompress&q=45&cs=strip&ch=DPR&w=1200&h=630&fit=crop", link: "loader.html?game_id=12-minibattles" },
+{ name: "Block Blast", description: "blast blocks fr fr", image: "https://tcf.admeen.org/game/18500/18097/400x246/block-blast.jpg", link: "loader.html?game_id=block-blast" },
+{ name: "Bit Planes", description: "bitty planes?", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQ-D-5Gh4Ds20Sn1AGzS5cu2sdaQr-DH0SwdA&s", link: "loader.html?game_id=bit-planes" },
+{ name: "Infinite-soccer", description: "KICKKICKKICK", image: "https://img.poki-cdn.com/cdn-cgi/image/quality=78,width=314,height=314,fit=cover,f=auto/760becc3912111347a66b8b98c110d2d.png", link: "loader.html?game_id=infinite-soccer" },
+{ name: "Duck Life", description: "FLYING DUCKY", image: "  https://cdn-0001.qstv.on.epicgames.com/dvDRVKBvBpYlORJWTN/image/landscape_comp.jpeg", link: "loader.html?game_id=duck-life" },
+{ name: "Doodle Jump", description: "Play Doodle Jump UNBLOCKED", image: "https://images.crazygames.com/games/doodle-jump/cover-1669135753297.png?auto=format,compress&q=75&cs=strip", link: "loader.html?game_id=doodle-jump" },
+{ name: "Temple Run 2", description: "IDK What this game is", image: "https://i.ytimg.com/vi/9aK2zoFBbKY/maxresdefault.jpg", link: "loader.html?game_id=temple-run-2" },
+{ name: "Drift Boss", description: "Play Drift Boss UNBLOCKED", image: "https://images.crazygames.com/games/drift-boss/cover_16x9-1732741931008.png?auto=format,compress&q=75&cs=strip", link: "loader.html?game_id=drift-boss" },
+{ name: "Subway Surfers (broken?)", description: "This better work", image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRETx9pdTEVl7kGEKpMN56VARACRdwgxnZlGA&s", link: "loader.html?game_id=subway-surfers-broken" },
+{ name: "Basketball Legends", description: "Play Basketball Unblocked", image: "https://img.gamepix.com/games/basketball-legends-2020/cover/basketball-legends-2020.png?w=400&ar=16:10", link: "loader.html?game_id=basketball-legends" },
+{ name: "Slope 3", description: "Wait 3rd version???", image: "https://slope3.com/imgs/slope-3.jpg", link: "loader.html?game_id=slope-3" }
         ];
-        // Add games to the page dynamically
         const gameContainer = document.getElementById('game-container');
         games.forEach(game => {
             const gameBox = document.createElement('div');

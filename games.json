@@ -13,7 +13,7 @@
       "name": "Roblox",
       "description": "It will work trust!!! It takes 1 minute to load",
       "logo": "https://play-lh.googleusercontent.com/WNWZaxi9RdJKe2GQM3vqXIAkk69mnIl4Cc8EyZcir2SKlVOxeUv9tZGfNTmNaLC717Ht",
-      "game_link": "loader.html?game_id=roblox",
+      "game_link": "homework/science.html",
       "id": "roblox"
     }
   },
@@ -139,7 +139,7 @@
       "name": "Tiny Fishing",
       "description": "There is always a bigger fish - maybe",
       "logo": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmgt71SEpRQqQzFKLmyCVQ3BadEu6_xtVlog&s",
-      "game_link": "loader.html?game_id=tiny-fishing",
+      "game_link": "games/tiny-fishing/index.html",
       "id": "tiny-fishing"
     }
   },

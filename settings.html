@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Playaway</title>
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <style>
         * {
             margin: 0;
@@ -168,6 +169,7 @@
         <a href="index.html">Home</a>
         <a href="games.html">Games</a>
         <a href="settings.html">Settings</a>
+        <a href="tv.html">Movies And Tv</a>
     </div>
 
     <!-- Cloak Boxes -->
@@ -184,6 +186,14 @@
         <label for="websiteTitleInput">Input the Website Title:</label>
         <input type="text" id="websiteTitleInput" placeholder="Enter website title" />
         <button onclick="updateWebsiteTitle()">Confirm Title</button>
+    </div>
+
+    <!-- Proxy Server Change Box -->
+    <div class="cloak-container">
+        <div class="cloak-box">
+            <h3>Change Proxy Server (MOVIE)</h3>
+            <button onclick="changeProxy()">Change Proxy</button>
+        </div>
     </div>
 
     <div id="particles"></div>
@@ -240,6 +250,26 @@
             } else {
                 alert('Please allow pop-ups for this site.');
             }
+        }
+
+        // This is the function that changes the proxy server
+        function changeProxy() {
+            Swal.fire({
+                title: 'Select Proxy Server',
+                input: 'select',
+                inputOptions: {
+                    '1': 'Regular Server',
+                    '2': 'Proxied Server',
+                    '3': 'other Proxied Server'
+                },
+                inputPlaceholder: 'Select a server',
+                showCancelButton: true
+            }).then((result) => {
+                if (result.isConfirmed) {
+                    localStorage.setItem('proxymovie', result.value);
+                    Swal.fire('Proxy Changed', 'You selected server ' + result.value, 'success');
+                }
+            });
         }
         
         // Might add a logo input later

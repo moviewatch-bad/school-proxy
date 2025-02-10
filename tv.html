@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie's And Tv shows - Playaway</title>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            height: 100%;
+            overflow: hidden;
+            background-color: black;
+            color: white;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Loading screen styles */
+        #loading-screen {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            background-color: black;
+            z-index: 9999;
+        }
+
+        #loading-screen img {
+            width: 150px;
+            height: auto;
+        }
+
+        #loading-text {
+            font-size: 20px;
+            margin-top: 10px;
+        }
+
+        /* Fullscreen iframe */
+        #content {
+            display: none;
+            width: 100%;
+            height: 100%;
+        }
+
+        iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
+        /* Menu bar styles */
+        .menu-bar {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(0, 0, 0, 0.7);
+            padding: 10px;
+            border-radius: 5px;
+        }
+
+        .menu-bar a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        .menu-bar a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loading-screen">
+        <img src="https://media0.giphy.com/media/mepMDsPB4etFm1zILj/giphy.gif" alt="Loading...">
+        <p id="loading-text">Firing up the movies...</p>
+    </div>
+<!-- Menu bar for loading screen -->
+    <div class="menu-bar" style="z-index: 1000;">
+        <a href="index.html">Home</a>
+        <a href="games.html">Games</a>
+        <a href="settings.html">Settings</a>
+        <a href="tv.html">Movies And Tv</a>
+        <a href="#" onclick="reloadIframe()">↻</a>
+        
+    </div>
+    <script>
+        alert("This is GMS MOVIES");
+        alert("Website Might take up to 1 minute to load");
+        alert("If a popup occurs just close it you see gms movies just wants some money");
+    </script>
+
+    <!-- Content -->
+    <div id="content">
+        <iframe id="myIframe"></iframe>
+        <div class="menu-bar">
+            <a href="index.html">Home</a>
+            <a href="games.html">Games</a>
+            <a href="settings.html">Settings</a>
+            <a href="tv.html">Movies And Tv</a>
+        </div>
+    </div>
+
+    <script>
+        function reloadIframe() {
+            document.getElementById('myIframe').contentWindow.location.reload();
+        }
+        
+        document.addEventListener("DOMContentLoaded", function() {
+            const loadingTexts = [
+                "Firing up the movies...",
+                "Loading your entertainment...",
+                "Getting things ready...",
+                "Almost there..."
+            ];
+
+            let textIndex = 0;
+            const loadingTextElement = document.getElementById("loading-text");
+            setInterval(() => {
+                textIndex = (textIndex + 1) % loadingTexts.length;
+                loadingTextElement.textContent = loadingTexts[textIndex];
+            }, 1500);
+
+            let serverChoice = localStorage.getItem("proxymovie");
+            if (!serverChoice) {
+                localStorage.setItem("proxymovie", "1"); // Default to server 1
+                serverChoice = "1";
+            }
+            
+            const iframe = document.getElementById("myIframe");
+            iframe.onload = function() {
+                document.getElementById("loading-screen").style.display = "none";
+                document.getElementById("content").style.display = "block";
+            };
+
+            if (serverChoice === "1") {
+                iframe.src = "https://gms-movie-playaway.onrender.com/";
+            } else if (serverChoice === "2") {
+                iframe.src = "https://going-to-outer-space.onrender.com/&?q=GMS%20Movie";
+            }
+        });
+        // Block all popups from opening
+(function() {
+    // Override window.open
+    window.open = function() {
+        console.warn("Popup blocked!");
+        return null;
+    };
+
+    // Override clicking links with target="_blank"
+    document.addEventListener('click', function(event) {
+        let target = event.target;
+        
+        while (target && target.tagName !== 'A') {
+            target = target.parentElement;
+        }
+
+        if (target && target.tagName === 'A' && target.target === '_blank') {
+            event.preventDefault();
+            console.warn("Popup blocked (target=_blank)!");
+        }
+    }, true);
+
+    // Block popups from new tabs via JS events
+    const originalSetTimeout = window.setTimeout;
+    window.setTimeout = function(fn, delay) {
+        if (typeof fn === "function") {
+            const fnString = fn.toString();
+            if (fnString.includes("window.open") || fnString.includes("document.createElement('a')")) {
+                console.warn("Popup attempt blocked via setTimeout!");
+                return;
+            }
+        }
+        return originalSetTimeout(fn, delay);
+    };
+
+    // Block popups from setInterval as well
+    const originalSetInterval = window.setInterval;
+    window.setInterval = function(fn, delay) {
+        if (typeof fn === "function") {
+            const fnString = fn.toString();
+            if (fnString.includes("window.open") || fnString.includes("document.createElement('a')")) {
+                console.warn("Popup attempt blocked via setInterval!");
+                return;
+            }
+        }
+        return originalSetInterval(fn, delay);
+    };
+
+    console.log("Adblock tripwire activated: Popups are now blocked.");
+})();
+
+    </script>
+</body>
+</body>
+</html>

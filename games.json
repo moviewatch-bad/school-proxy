@@ -277,6 +277,33 @@
       "game_link": "games/basketball/basketball-legends/index.html",
       "id": "basketball-legends"
     }
+  },
+  {
+    "Game": {
+      "name": "Chrome Dino 3d",
+      "description": "",
+      "logo": "https://img.gamepix.com/games/basketball-legends-2020/cover/basketball-legends-2020.png?w=400&ar=16:10",
+      "game_link": "games/basketball/chrome-dino-3d/index.html",
+      "id": "chrome-dino-3d"
+    }
+  },
+  {
+    "Game": {
+      "name": "Funny shooter 2",
+      "description": "",
+      "logo": "https://images.crazygames.com/funny-shooter-2_16x9/20241113090815/funny-shooter-2_16x9-cover?auto=format,compress&q=75&cs=strip",
+      "game_link": "games/funny-shooter-2/index.html",
+      "id": "funny-shooter-2"
+    }
+  },
+  {
+    "Game": {
+      "name": "Infinite Craft",
+      "description": "",
+      "logo": "https://images.crazygames.com/funny-shooter-2_16x9/20241113090815/funny-shooter-2_16x9-cover?auto=format,compress&q=75&cs=strip",
+      "game_link": "https://going-to-outer-space.onrender.com/&?q=Infinite%20Craft",
+      "id": "infinite-craft"
+    }
+    
   }
-
 ]
